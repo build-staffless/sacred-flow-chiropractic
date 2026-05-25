@@ -504,6 +504,11 @@ a { color: inherit; text-decoration: none; }
 
 .faq-inner {
   max-width: 800px;
+  text-align: center;
+}
+
+.faq-inner .faq-list {
+  text-align: left;
 }
 
 .faq-list {
@@ -580,6 +585,11 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 1.1fr 0.9fr;
   gap: 80px;
   align-items: start;
+}
+
+.contact-form-col .divider-line {
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .contact-intro {
@@ -733,62 +743,146 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto 40px;
 }
 
-.video-placeholder {
+.video-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #e8f0ec 0%, #d4e6dd 50%, #c9d9d0 100%);
-  border-radius: 16px;
-  border: 2px solid rgba(201,169,110,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  background: #0d1b2a;
+  aspect-ratio: 16 / 9;
   position: relative;
 }
 
-.video-placeholder::before {
-  content: '';
+.video-wrapper video {
   position: absolute;
-  inset: 0;
-  background: url('images/hero-bg.jpg') center center / cover no-repeat;
-  opacity: 0.18;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #0d1b2a;
 }
 
-.video-placeholder-inner {
-  position: relative;
-  z-index: 1;
+/* Custom video controls */
+.vcustom-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: rgba(0,0,0,0.6);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  padding: 0 12px;
+  z-index: 10;
 }
 
-.video-play-btn {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: var(--teal);
-  color: #ffffff;
+.vcustom-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.vbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  opacity: 0.9;
+  flex-shrink: 0;
+}
+
+.vbtn:hover { opacity: 1; }
+
+.vprogress-wrap {
+  flex: 1;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.vprogress-bg {
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 2px;
+  position: relative;
+}
+
+.vprogress-fill {
+  height: 100%;
+  background: #4a9eff;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.vtime {
+  color: white;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: sans-serif;
+}
+
+/* Big play overlay */
+.vplay-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+
+.vplay-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-left: 4px;
+  transition: transform 0.15s;
 }
 
-.video-placeholder-text {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--teal-dark);
-  margin: 0;
+.vplay-circle:hover { transform: scale(1.1); }
+
+/* ===================================================
+   BOOKING SECTION
+   =================================================== */
+.booking-section {
+  background: #ffffff;
+  padding: 80px 24px;
+  text-align: center;
 }
 
-.video-placeholder-sub {
-  font-size: 0.85rem;
+.booking-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.booking-intro {
+  font-size: 1.05rem;
   color: var(--gray-text);
-  margin: 0;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.calendly-inline-widget {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(201,169,110,0.2);
 }
 
 /* ===================================================
